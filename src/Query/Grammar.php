@@ -353,7 +353,7 @@ class Grammar implements IGrammar
      * @return string
      */
     protected function isSpecialPrimitiveDataType($value){
-        return preg_match("/^(binary|datetime|guid|time|datetimeoffset)(\'[\w\:\-\.]+\')$/i", $value);
+        return preg_match("/^(binary|datetime|guid|time|datetimeoffset)(\'[\w\:\-\.]+\')$/i", $value) || preg_match("/^(\{)?[a-f\d]{8}(-[a-f\d]{4}){4}[a-f\d]{8}(?(1)\})$/i", $value);
     }
 
     /**
